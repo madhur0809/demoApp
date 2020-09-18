@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 
 export default function RegisterPage() {
@@ -11,26 +11,32 @@ export default function RegisterPage() {
         )
     }
     return (
-       <View>
+       <SafeAreaView>
            <ImageBackground blurRadius={3}
            style={styles.backImage}
            source={require('../assets/backimage.jpg')}>
-            <View style={styles.headingContainer}>
-                <Text style={{color: 'white', fontSize: 78, fontWeight: 'bold'}}> Shopify </Text>
-            </View>
-            <View style={styles.formContainer}>
-                <TextInput placeholder={'Enter Name'} style={styles.textInputBox}></TextInput>
-                <TextInput keyboardType={'email-address'} placeholder={'Enter Email Address'} style={styles.textInputBox}></TextInput>
-                <TextInput keyboardType={'number-pad'} 
-                placeholder={'Enter Mobile Number'} 
-                maxLength={10}
-                style={styles.textInputBox}></TextInput>
-                <AppBtn title='SIGN UP' onPress={() => alert('Successfully Registered')}></AppBtn>
-
-            </View>
+               
+                <View style={styles.headingContainer}>
+                    <Text style={{color: 'white', fontSize: 78, fontWeight: 'bold'}}> Shopbit </Text>
+                </View>
+                <View style={{width:300, alignSelf:'center', flex:0.1}}>
+                    <Text style={{color: 'white', fontSize: 40, fontWeight: 'bold'}}>Create your account </Text>
+                    <Text style={{color: 'white', fontSize: 20, fontWeight: 'bold'}}>Please fill the forms below with your details </Text>
+                </View>
+                <View style={styles.formContainer}>
+                    <TextInput placeholder={'Name'} style={styles.textInputBox}></TextInput>
+                    <TextInput keyboardType={'email-address'} placeholder={'Email Address'} style={styles.textInputBox}></TextInput>
+                    <TextInput keyboardType={'number-pad'} 
+                    placeholder={'Password'}
+                    style={styles.textInputBox}></TextInput>
+                    <TextInput keyboardType={'number-pad'} 
+                    placeholder={'Confirm Password'}
+                    style={styles.textInputBox}></TextInput>
+                    <AppBtn title='SIGN UP' onPress={() => alert('Successfully Registered')}></AppBtn>
+                </View>
            </ImageBackground>
 
-       </View>
+       </SafeAreaView>
     )
 }
 
@@ -40,7 +46,7 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     headingContainer: {
-        flex: 0.3,
+        flex: 0.21,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -55,13 +61,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         color: 'black',
         width: 300,
-        height: 50,
-        borderRadius: 30,
+        height: 60,
+        borderRadius: 10,
         paddingHorizontal: 10,
         alignItems: 'center',
         fontSize: 20,
         textAlign: "center",
-        marginBottom: 70,
+        marginBottom: 45,
     },
     appButtonContainer: {
         backgroundColor: '#03b5fc',

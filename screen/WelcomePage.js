@@ -17,15 +17,15 @@ export default function WelcomePage({navigation}){
             <ImageBackground source={require('../assets/backimage.jpg')} blurRadius={3}
             style={styles.backImage}>
                 <View style={styles.headingContainer}>
-                    <Text style={{color: 'white', fontSize: 78, fontWeight: 'bold'}}> Shopify </Text>
+                    <Text style={{color: 'white', fontSize: 78, fontWeight: 'bold'}}> Shopbit </Text>
                 </View>
                 <View style={styles.credentialContainer}>
                     <View style={styles.buttonContainer}>
                         <Text style={styles.registerText}> Already have an account? </Text>
-                        <AppBtn title={'LOGIN'} ></AppBtn>
+                        <AppBtn title={'LOGIN'} onPress={()=>navigation.navigate("LoginPage")}></AppBtn>
                     </View>
                     <View style={styles.buttonContainer}>
-                        <Text style={styles.registerText}> New to Shopify? </Text>
+                        <Text style={styles.registerText}> New to Shopbit? </Text>
                         <View>
                         <AppBtn title='REGISTER' onPress={()=>navigation.navigate("RegisterPage")} ></AppBtn>
                         </View> 
